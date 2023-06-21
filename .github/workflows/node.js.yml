@@ -4,8 +4,8 @@
 name: GitHub Pages deploy
 
 on:
-  #manual:
-  - workflow_dispatch
+  push:
+    branches: [master]
 
 permissions:
   contents: write
