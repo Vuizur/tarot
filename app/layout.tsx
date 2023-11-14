@@ -9,6 +9,9 @@ const APP_DEFAULT_TITLE = "Tarot";
 const APP_TITLE_TEMPLATE = "%s - PWA App";
 const APP_DESCRIPTION = "A simple, ad-free and open source tarot card app.";
 
+// Set PRE_URL to "" if in development mode, otherwise to tarot/
+const PRE_URL = process.env.NODE_ENV === "development" ? "" : "tarot/";
+
 export const metadata: Metadata = {
   applicationName: APP_NAME,
   title: {
@@ -16,7 +19,7 @@ export const metadata: Metadata = {
     template: APP_TITLE_TEMPLATE,
   },
   description: APP_DESCRIPTION,
-  manifest: "manifest.json",
+  manifest: PRE_URL + "manifest.json",
   themeColor: "#FFFFFF",
   appleWebApp: {
     capable: true,
