@@ -10,7 +10,7 @@ const APP_TITLE_TEMPLATE = "%s - PWA App";
 const APP_DESCRIPTION = "A simple, ad-free and open source tarot card app.";
 
 // Set PRE_URL to "" if in development mode, otherwise to tarot/
-const PRE_URL = process.env.NODE_ENV === "development" ? "" : "tarot/";
+//const PRE_URL = process.env.NODE_ENV === "development" ? "" : "tarot/";
 
 export const metadata: Metadata = {
   applicationName: APP_NAME,
