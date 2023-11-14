@@ -3,7 +3,7 @@
 const isGithubActions = process.env.GITHUB_ACTIONS || false
 
 let assetPrefix = ''
-let basePath = '/'
+let basePath = ''
 
 if (isGithubActions) {
 
@@ -12,8 +12,11 @@ if (isGithubActions) {
     assetPrefix = `/${repo}/`
     basePath = `/${repo}`
 }
+const withPWA = require("@ducanh2912/next-pwa").default({
+    dest: "public",
+});
 
-module.exports = {
+module.exports = withPWA({
     output: "export",
     assetPrefix: assetPrefix,
     basePath: basePath,
@@ -21,4 +24,4 @@ module.exports = {
         loader: 'akamai',
         path: '',
     }
-}
+})
